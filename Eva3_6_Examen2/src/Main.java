@@ -6,6 +6,9 @@ public class Main {
         gameStart();
         Scanner scanner = new Scanner(System.in);
         int userChoice = scanner.nextInt();
+        int countWins = 0;
+        int countLoses = 0;
+        int countDraws = 0;
 
         while(playing){
             String []plays = {"Piedra","Papel","Tijera"};
@@ -14,12 +17,23 @@ public class Main {
 
             System.out.println("Tu eleccion: " + plays[userChoice - 1]);
             System.out.println("La eleccion de la computadora: " + plays[computerChoice - 1]);
-            System.out.println(EvalPlay(userChoice,computerChoice));
+            String result = EvalPlay(userChoice,computerChoice);
+            System.out.println(result);
+            if (result.equals("Ganaste")) {
+                countWins++;
+            }
+            else if (result.equals("Perdiste")) {
+                countLoses++;
+            }
+            else {
+                countDraws++;
+            }
             System.out.println("Quieres jugar de nuevo?");
             System.out.println("1.- Si");
             System.out.println("2.- No");
             int playAgain = scanner.nextInt();
             if (playAgain == 2) {
+
                 playing = false;
             }
             else {
@@ -31,6 +45,10 @@ public class Main {
                 }
             }
         }
+            System.out.println("Estadisticas:");
+            System.out.println("Ganadas: " + countWins);
+            System.out.println("Perdidas: " + countLoses);
+            System.out.println("Empates: " + countDraws);
     }
     public  static void gameStart() {
         System.out.println("Bienvenido a piedra, papel o tijera");
@@ -39,7 +57,6 @@ public class Main {
         System.out.println("2.- Papel");
         System.out.println("3.- Tijera");
         System.out.println("4.- Salir");
-
     }
     public static  String EvalPlay(int userChoice,int computerChoice) {
         String result = "";
@@ -55,5 +72,4 @@ public class Main {
         }
         return result;
     }
-
 }
