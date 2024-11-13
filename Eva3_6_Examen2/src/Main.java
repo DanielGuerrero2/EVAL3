@@ -3,19 +3,15 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         boolean playing  = true;
-        System.out.println("Bienvenido a piedra, papel o tijera");
-        System.out.println("Elije una opcion:");
-        System.out.println("1.- Piedra");
-        System.out.println("2.- Papel");
-        System.out.println("3.- Tijera");
-        System.out.println("4.- Salir");
+        gameStart();
         Scanner scanner = new Scanner(System.in);
+        int userChoice = scanner.nextInt();
 
         while(playing){
-            int userChoice = scanner.nextInt();
             String []plays = {"Piedra","Papel","Tijera"};
 
             int computerChoice = (int) (Math.random() * 3) + 1;
+
             System.out.println("Tu eleccion: " + plays[userChoice - 1]);
             System.out.println("La eleccion de la computadora: " + plays[computerChoice - 1]);
             System.out.println(EvalPlay(userChoice,computerChoice));
@@ -23,15 +19,28 @@ public class Main {
             System.out.println("1.- Si");
             System.out.println("2.- No");
             int playAgain = scanner.nextInt();
-            if(playAgain == 2){
+            if (playAgain == 2) {
                 playing = false;
-                System.out.println("Gracias por jugar");
             }
-
-
+            else {
+                gameStart();
+                userChoice = scanner.nextInt();
+                if (userChoice == 4) {
+                    playing = false;
+                    System.out.println("Gracias por jugar");
+                }
+            }
         }
     }
+    public  static void gameStart() {
+        System.out.println("Bienvenido a piedra, papel o tijera");
+        System.out.println("Elije una opcion:");
+        System.out.println("1.- Piedra");
+        System.out.println("2.- Papel");
+        System.out.println("3.- Tijera");
+        System.out.println("4.- Salir");
 
+    }
     public static  String EvalPlay(int userChoice,int computerChoice) {
         String result = "";
         boolean win =(userChoice == 1 && computerChoice == 3) || (userChoice == 2 && computerChoice == 1) || (userChoice == 3 && computerChoice == 2);
