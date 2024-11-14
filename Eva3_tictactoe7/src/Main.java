@@ -1,6 +1,5 @@
 import java.util.Arrays;
 import java.util.Scanner;
-import java.util.Stack;
 
 public class Main {
     public static void main(String[] args) {
@@ -64,9 +63,7 @@ public class Main {
     private  static  boolean isBoardFull(char[][] board){
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
-                if(board[i][j]==' '){
-                    return false;
-                }
+                if(board[i][j]==' ') return false;
             }
         }
         return true;
@@ -82,7 +79,6 @@ public class Main {
             }
         }
         //verificamos si hay un ganador en las diagonales
-
         return (board[0][2] == currentPlayer && board[1][1] == currentPlayer && board[2][0] == currentPlayer)|| (board[0][0]==currentPlayer && board[1][1]==currentPlayer && board[2][2]==currentPlayer);
     }
 }
