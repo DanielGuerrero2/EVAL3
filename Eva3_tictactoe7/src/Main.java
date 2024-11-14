@@ -59,9 +59,6 @@ public class Main {
     private static void printBoard(char[][] board){
         for (int i = 0; i < 3; i++) {
             System.out.println(" "+board[i][0]+" | "+board[i][1]+" | "+board[i][2]);
-
-
-
         }
     }
     private  static  boolean isBoardFull(char[][] board){
@@ -85,9 +82,7 @@ public class Main {
             }
         }
         //verificamos si hay un ganador en las diagonales
-        if(board[0][0]==currentPlayer && board[1][1]==currentPlayer && board[2][2]==currentPlayer){
-            return true;
-        }
-        return board[0][2] == currentPlayer && board[1][1] == currentPlayer && board[2][0] == currentPlayer;
+
+        return (board[0][2] == currentPlayer && board[1][1] == currentPlayer && board[2][0] == currentPlayer)|| (board[0][0]==currentPlayer && board[1][1]==currentPlayer && board[2][2]==currentPlayer);
     }
 }
