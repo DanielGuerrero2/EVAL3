@@ -9,7 +9,10 @@ public class Main {
         int countWins = 0;
         int countLoses = 0;
         int countDraws = 0;
-
+        if (userChoice == 4) {
+            playing = false;
+            System.out.println("Gracias por jugar");
+        }
         while(playing){
             String []plays = {"Piedra","Papel","Tijera"};
 
@@ -33,12 +36,17 @@ public class Main {
             System.out.println("2.- No");
             int playAgain = scanner.nextInt();
             if (playAgain == 2) {
-
                 playing = false;
+                System.out.println("Gracias por jugar");
             }
             else {
                 gameStart();
                 userChoice = scanner.nextInt();
+                while (userChoice < 1 || userChoice > 4) {
+                    System.out.println("Opcion invalida, intenta de nuevo");
+                    gameStart();
+                    userChoice = scanner.nextInt();
+                }
                 if (userChoice == 4) {
                     playing = false;
                     System.out.println("Gracias por jugar");
@@ -46,6 +54,7 @@ public class Main {
             }
         }
             System.out.println("Estadisticas:");
+            System.out.println("Juegos jugados: " + (countWins + countLoses + countDraws)); ;
             System.out.println("Ganadas: " + countWins);
             System.out.println("Perdidas: " + countLoses);
             System.out.println("Empates: " + countDraws);

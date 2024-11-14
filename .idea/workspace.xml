@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6a6dafc6-99aa-414a-a68f-fbfdeb59724b" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Eva3_6_Examen2/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Eva3_6_Examen2/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,7 +25,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/danie/OneDrive/Escritorio/Eva3/Eva3_6_Examen2",
+    "last_opened_file_path": "C:/Users/danie/OneDrive/Escritorio/Eva3",
     "nodejs_package_manager_path": "npm",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
@@ -52,6 +52,7 @@
       <workItem from="1730957522873" duration="81000" />
       <workItem from="1731465574155" duration="132000" />
       <workItem from="1731465919033" duration="12000" />
+      <workItem from="1731539174663" duration="36000" />
     </task>
     <servers />
   </component>
