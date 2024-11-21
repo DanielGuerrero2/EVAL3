@@ -47,7 +47,7 @@ public class Main {
                 gameEnded = true;
             }
             //verificamos si el tablero esta lleno
-            if(isBoardFull(board)){
+            if(isBoardFull(board)&&!checkWinner(board, currentPlayer)){
                 System.out.println("El juego ha terminado en empate!");
                 gameEnded = true;
             }
